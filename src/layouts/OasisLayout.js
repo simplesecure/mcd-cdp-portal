@@ -97,6 +97,7 @@ const OasisLayoutStyle = styled.div`
   text-align: center;
   color: black;
   width: 100%;
+  position: static;
 
   @media only screen and (max-width: 425px) {
     padding: 0 10px;
@@ -181,7 +182,8 @@ const OasisLayout = ({ children }) => {
           margin: '0 auto',
           maxWidth: 1203,
           paddingTop: '41px',
-          width: '100%'
+          width: '100%',
+          position: 'static'
         }}
       >
         <Helmet>

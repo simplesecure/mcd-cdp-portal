@@ -11,6 +11,7 @@ import Borrow from 'pages/Borrow';
 import Save from 'pages/Save';
 import Privacy from 'pages/Privacy';
 import Terms from 'pages/Terms';
+import { AboutTrade, AboutBorrow, AboutSave } from './pages/About';
 import CDPDisplay from 'components/CDPDisplay';
 import modals, { templates } from 'components/Modals';
 import { ModalProvider } from 'providers/ModalProvider';
@@ -138,6 +139,21 @@ export default mount({
   [`/${Routes.TERMS}`]: route(() => ({
     title: 'Oasis - Terms of Service',
     view: <Terms />
+  })),
+
+  [`/about/trade`]: route(() => ({
+    title: 'Oasis - About: Trade',
+    view: <AboutTrade />
+  })),
+
+  [`/about/borrow`]: route(() => ({
+    title: 'Oasis - About: Borrow',
+    view: <AboutBorrow />
+  })),
+
+  [`/about/save`]: route(() => ({
+    title: 'Oasis - About: Save',
+    view: <AboutSave />
   }))
 });
 
