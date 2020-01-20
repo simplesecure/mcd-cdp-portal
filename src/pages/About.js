@@ -26,25 +26,28 @@ const TopBackground = styled(Box)`
 const Heading = styled(Box)`
   text-align: center;
   letter-spacing: 0.4px;
-
+  margin: 154px auto 0;
+  max-width: 500px;
+  
   h1 {
     font-size: 48px;
+    font-weight: bold;
     line-height: 58px;
-
-    letter-spacing: 0.4px;
-
+    letter-spacing: 1.7px;
     color: #253a44;
+    margin-bottom: 17px;
   }
 
   p {
     font-size: 18px;
     line-height: 27px;
-    color: #14303a;
+    color: ${props => props.textColor};
   }
 
   .button {
-    padding-right: 22px;
-    padding-left: 22px;
+    margin-top: 60px;
+    color: ${props => props.btnTextColor};
+    padding: 0 22px;
     border-radius: 6px;
     display: inline-block;
     font-size: 15px;
@@ -54,6 +57,7 @@ const Heading = styled(Box)`
     text-decoration: none;
     box-shadow: 0 2px 2px ${props => props.btnShadowColor};
     transition: all 0.15s ease;
+    background-color: white;
   }
 
   .button:hover {
@@ -69,7 +73,7 @@ const AboutTrade = hot(() => {
     <OasisLayout style={{ position: 'static' }}>
       <SEO title="Oasis - About: Trade" />
       <TopBackground background="linear-gradient(180deg, rgba(199, 216, 227, 0.53) 0%, rgba(199, 216, 227, 0.53) 0%, rgba(222, 239, 236, 0.37) 63.02%, rgba(222, 239, 236, 0) 100%)" />
-      <Heading pColor="#14303A" btnShadowColor="#C8E4E6" btnTextColor="#5894B5">
+      <Heading textColor="#14303A" btnShadowColor="#C8E4E6" btnTextColor="#5894B5">
         <h1>{lang.landing_page.trade_card.title}</h1>
         <p>{lang.landing_page.trade_card.description}</p>
         <a className="button" href={`/${Routes.TRADE}`}>
