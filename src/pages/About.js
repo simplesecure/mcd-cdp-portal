@@ -10,7 +10,7 @@ import SEO from '../components/SEO';
 import mixpanel from 'mixpanel-browser';
 import { Routes } from '../utils/constants';
 
-import { Box } from '@makerdao/ui-components-core';
+import { Box, Flex } from '@makerdao/ui-components-core';
 import useLanguage from 'hooks/useLanguage';
 
 const TopBackground = styled(Box)`
@@ -28,7 +28,7 @@ const Heading = styled(Box)`
   letter-spacing: 0.4px;
   margin: 154px auto 0;
   max-width: 500px;
-  
+
   h1 {
     font-size: 48px;
     font-weight: bold;
@@ -66,6 +66,43 @@ const Heading = styled(Box)`
   }
 `;
 
+const KeyPoints = styled(Box)`
+  margin-top: 200px;
+  padding: 0 100px 0 148px;
+  text-align: left;
+  
+  .key-point {
+    justify-content: space-between;
+    .image {
+      width: 300px;
+    }
+    .content {
+      max-width: 500px;
+      
+      h1 {
+        font-family: 'SF Pro Display',Arial,Helvetica,sans-serif;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: 0.01px;
+        color: #231536;
+        margin-bottom: 13px;
+      }
+      
+      p {
+        font-size: 18px;
+        line-height: 23px;
+        color: #48495F;
+      }
+    }
+  }
+   
+  .key-point:nth-of-Type(2) {
+    margin: 350px 0;
+  }
+  
+  
+`;
+
 const AboutTrade = hot(() => {
   const { lang } = useLanguage();
 
@@ -73,13 +110,40 @@ const AboutTrade = hot(() => {
     <OasisLayout style={{ position: 'static' }}>
       <SEO title="Oasis - About: Trade" />
       <TopBackground background="linear-gradient(180deg, rgba(199, 216, 227, 0.53) 0%, rgba(199, 216, 227, 0.53) 0%, rgba(222, 239, 236, 0.37) 63.02%, rgba(222, 239, 236, 0) 100%)" />
-      <Heading textColor="#14303A" btnShadowColor="#C8E4E6" btnTextColor="#5894B5">
+      <Heading
+        textColor="#14303A"
+        btnShadowColor="#C8E4E6"
+        btnTextColor="#5894B5"
+      >
         <h1>{lang.landing_page.trade_card.title}</h1>
         <p>{lang.landing_page.trade_card.description}</p>
         <a className="button" href={`/${Routes.TRADE}`}>
           {lang.landing_page.trade_card.button}
         </a>
       </Heading>
+      <KeyPoints>
+        <Flex className="key-point">
+          <Box className="content">
+            <h1>Decentralized Margin Trading</h1>
+            <p>Users can choose to lock up their assets, draw DAI, and purchase more of that same asset to increase their exposure to their original position, without a third party.</p>
+          </Box>
+          <Box className="image" />
+        </Flex>
+        <Flex className="key-point">
+          <Box className="image" />
+          <Box className="content">
+            <h1>Decentralized Margin Trading</h1>
+            <p>Users can choose to lock up their assets, draw DAI, and purchase more of that same asset to increase their exposure to their original position, without a third party.</p>
+          </Box>
+        </Flex>
+        <Flex className="key-point">
+          <Box className="content">
+            <h1>Decentralized Margin Trading</h1>
+            <p>Users can choose to lock up their assets, draw DAI, and purchase more of that same asset to increase their exposure to their original position, without a third party.</p>
+          </Box>
+          <Box className="image" />
+        </Flex>
+      </KeyPoints>
     </OasisLayout>
   );
 });
