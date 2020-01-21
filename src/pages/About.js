@@ -113,6 +113,13 @@ const QuestionsSection = styled(Box)`
   }
 `;
 
+const BottomNote = () => (
+  <Box textAlign="center" mt="100px" fontSize="12px" lineHeight="14px">
+    <Box>Have more questions?</Box>
+    <Box mt="10px">Join us on chat and talk to the team</Box>
+  </Box>
+);
+
 const AboutTrade = hot(() => {
   const { lang } = useLanguage();
 
@@ -170,6 +177,7 @@ const AboutTrade = hot(() => {
         <h3>Trade Questions</h3>
         <Questions />
       </QuestionsSection>
+      <BottomNote />
     </OasisLayout>
   );
 });
@@ -231,6 +239,7 @@ const AboutBorrow = hot(() => {
         <h3>Borrow Questions</h3>
         <Questions />
       </QuestionsSection>
+      <BottomNote />
     </OasisLayout>
   );
 });
@@ -292,6 +301,7 @@ const AboutSave = hot(() => {
         <h3>Save Questions</h3>
         <Questions />
       </QuestionsSection>
+      <BottomNote />
     </OasisLayout>
   );
 });
