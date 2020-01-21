@@ -70,7 +70,7 @@ const KeyPoints = styled(Box)`
   margin-top: 200px;
   padding: 0 100px 0 148px;
   text-align: left;
-  
+
   .key-point {
     justify-content: space-between;
     .image {
@@ -78,29 +78,27 @@ const KeyPoints = styled(Box)`
     }
     .content {
       max-width: 500px;
-      
+
       h1 {
-        font-family: 'SF Pro Display',Arial,Helvetica,sans-serif;
+        font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
         font-size: 30px;
         line-height: 36px;
         letter-spacing: 0.01px;
         color: #231536;
         margin-bottom: 13px;
       }
-      
+
       p {
         font-size: 18px;
         line-height: 23px;
-        color: #48495F;
+        color: #48495f;
       }
     }
   }
-   
-  .key-point:nth-of-Type(2) {
+
+  .key-point:nth-of-type(2) {
     margin: 350px 0;
   }
-  
-  
 `;
 
 const AboutTrade = hot(() => {
@@ -125,7 +123,11 @@ const AboutTrade = hot(() => {
         <Flex className="key-point">
           <Box className="content">
             <h1>Decentralized Margin Trading</h1>
-            <p>Users can choose to lock up their assets, draw DAI, and purchase more of that same asset to increase their exposure to their original position, without a third party.</p>
+            <p>
+              Users can choose to lock up their assets, draw DAI, and purchase
+              more of that same asset to increase their exposure to their
+              original position, without a third party.
+            </p>
           </Box>
           <Box className="image" />
         </Flex>
@@ -133,13 +135,21 @@ const AboutTrade = hot(() => {
           <Box className="image" />
           <Box className="content">
             <h1>Decentralized Margin Trading</h1>
-            <p>Users can choose to lock up their assets, draw DAI, and purchase more of that same asset to increase their exposure to their original position, without a third party.</p>
+            <p>
+              Users can choose to lock up their assets, draw DAI, and purchase
+              more of that same asset to increase their exposure to their
+              original position, without a third party.
+            </p>
           </Box>
         </Flex>
         <Flex className="key-point">
           <Box className="content">
             <h1>Decentralized Margin Trading</h1>
-            <p>Users can choose to lock up their assets, draw DAI, and purchase more of that same asset to increase their exposure to their original position, without a third party.</p>
+            <p>
+              Users can choose to lock up their assets, draw DAI, and purchase
+              more of that same asset to increase their exposure to their
+              original position, without a third party.
+            </p>
           </Box>
           <Box className="image" />
         </Flex>
