@@ -101,6 +101,18 @@ const KeyPoints = styled(Box)`
   }
 `;
 
+const QuestionsSection = styled(Box)`
+  margin-top: 328px;
+
+  h3 {
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    line-height: 40px;
+    color: #000;
+  }
+`;
+
 const AboutTrade = hot(() => {
   const { lang } = useLanguage();
 
@@ -154,7 +166,10 @@ const AboutTrade = hot(() => {
           <Box className="image" />
         </Flex>
       </KeyPoints>
-      <Questions />
+      <QuestionsSection>
+        <h3>Trade Questions</h3>
+        <Questions />
+      </QuestionsSection>
     </OasisLayout>
   );
 });
@@ -212,7 +227,10 @@ const AboutBorrow = hot(() => {
           <Box className="image" />
         </Flex>
       </KeyPoints>
-      <Questions />
+      <QuestionsSection>
+        <h3>Borrow Questions</h3>
+        <Questions />
+      </QuestionsSection>
     </OasisLayout>
   );
 });
@@ -270,7 +288,10 @@ const AboutSave = hot(() => {
           <Box className="image" />
         </Flex>
       </KeyPoints>
-      <Questions />
+      <QuestionsSection>
+        <h3>Save Questions</h3>
+        <Questions />
+      </QuestionsSection>
     </OasisLayout>
   );
 });
