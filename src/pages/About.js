@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { hot } from 'react-hot-loader/root';
-
 import styled from 'styled-components';
-import { Link, useCurrentRoute } from 'react-navi';
+import { Link } from 'react-navi';
 
-import OasisLayout from '../layouts/OasisLayout';
-import SEO from '../components/SEO';
-import mixpanel from 'mixpanel-browser';
-import { Routes } from '../utils/constants';
+import OasisLayout from 'layouts/OasisLayout';
+import SEO from 'components/SEO';
+import Questions from 'components/Questions';
+
+import { Routes } from 'utils/constants';
 
 import { Box, Flex } from '@makerdao/ui-components-core';
 import useLanguage from 'hooks/useLanguage';
@@ -154,20 +154,125 @@ const AboutTrade = hot(() => {
           <Box className="image" />
         </Flex>
       </KeyPoints>
+      <Questions />
     </OasisLayout>
   );
 });
 
-const AboutBorrow = () => (
-  <OasisLayout>
-    <h1>Borrow</h1>
-  </OasisLayout>
-);
+const AboutBorrow = hot(() => {
+  const { lang } = useLanguage();
 
-const AboutSave = hot(() => (
-  <OasisLayout>
-    <h1>Save</h1>
-  </OasisLayout>
-));
+  return (
+    <OasisLayout style={{ position: 'static' }}>
+      <SEO title="Oasis - About: Borrow" />
+      <TopBackground background="linear-gradient(180deg, rgba(238, 231, 217, 0.85) 0%, rgba(252, 234, 220, 0.42) 53.12%, rgba(250, 240, 226, 0) 100%)" />
+      <Heading
+        textColor="#55301F"
+        btnShadowColor="#F1E3DB"
+        btnTextColor="#945F47"
+      >
+        <h1>{lang.landing_page.borrow_card.title}</h1>
+        <p>{lang.landing_page.borrow_card.description}</p>
+        <Link className="button" href={`/${Routes.BORROW}`}>
+          {lang.landing_page.borrow_card.button}
+        </Link>
+      </Heading>
+      <KeyPoints>
+        <Flex className="key-point">
+          <Box className="content">
+            <h1>Completely Permisionless</h1>
+            <p>
+              There are no restrictions related to prior borrowing history or
+              cumbersome application processes. Anyone can access the system
+              simply by using an Ethereum wallet address.
+            </p>
+          </Box>
+          <Box className="image" />
+        </Flex>
+        <Flex className="key-point">
+          <Box className="image" />
+          <Box className="content">
+            <h1>Flexible Repayment</h1>
+            <p>
+              There are no time limits or repayment schedules involved with
+              using Maker Vault. Users are free to create and repay Dai, or add
+              additional collateral whenever they choose.
+            </p>
+          </Box>
+        </Flex>
+        <Flex className="key-point">
+          <Box className="content">
+            <h1>No Counterparty Risk</h1>
+            <p>
+              The system is a set of ownerless, autonomous smart contracts. This
+              means you don’t need to trust a counterparty institution to
+              successfully manage or release your funds.
+            </p>
+          </Box>
+          <Box className="image" />
+        </Flex>
+      </KeyPoints>
+      <Questions />
+    </OasisLayout>
+  );
+});
+
+const AboutSave = hot(() => {
+  const { lang } = useLanguage();
+
+  return (
+    <OasisLayout style={{ position: 'static' }}>
+      <SEO title="Oasis - About: Save" />
+      <TopBackground background="linear-gradient(180deg, rgba(213, 232, 227, 0.63) 0%, rgba(238, 240, 228, 0.56) 50%, rgba(238, 240, 228, 0) 100%)" />
+      <Heading
+        textColor="#0F2E28"
+        btnShadowColor="#D7E9E3"
+        btnTextColor="#699C90"
+      >
+        <h1>{lang.landing_page.save_card.title}</h1>
+        <p>{lang.landing_page.save_card.description}</p>
+        <Link className="button" href={`/${Routes.SAVE}`}>
+          {lang.landing_page.save_card.button}
+        </Link>
+      </Heading>
+      <KeyPoints>
+        <Flex className="key-point">
+          <Box className="content">
+            <h1>Completely Permisionless</h1>
+            <p>
+              There are no restrictions related to prior borrowing history or
+              cumbersome application processes. Anyone can access the system
+              simply by using an Ethereum wallet address.
+            </p>
+          </Box>
+          <Box className="image" />
+        </Flex>
+        <Flex className="key-point">
+          <Box className="image" />
+          <Box className="content">
+            <h1>Flexible Repayment</h1>
+            <p>
+              There are no time limits or repayment schedules involved with
+              using Maker Vault. Users are free to create and repay Dai, or add
+              additional collateral whenever they choose.
+            </p>
+          </Box>
+        </Flex>
+        <Flex className="key-point">
+          <Box className="content">
+            <h1>No Counterparty Risk</h1>
+            <p>
+              The system is a set of ownerless, autonomous smart contracts. This
+              means you don’t need to trust a counterparty institution to
+              successfully manage or release your funds.
+            </p>
+          </Box>
+          <Box className="image" />
+        </Flex>
+      </KeyPoints>
+      <Questions />
+    </OasisLayout>
+  );
+});
 
 export { AboutTrade, AboutBorrow, AboutSave };
