@@ -75,7 +75,7 @@ test('render overview page and display calculated vault values', async () => {
   // Deposited
   getByText('6.00 ETH');
   // Available to withdraw
-  getByText('5.20 ETH');
+  getByText('5.19 ETH');
   // Privacy policy
   getByText('privacy policy');
 
