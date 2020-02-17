@@ -20,6 +20,16 @@ import { ReactComponent as WalletLinkLogo } from 'images/wallet-link.svg';
 import { AccountTypes } from '../utils/constants';
 import { BrowserView } from 'react-device-detect';
 
+import SimpleID from 'simpleid-js-sdk';
+
+const simple = new SimpleID({
+  appOrigin: window.location.origin,
+  appName: "Oasis_App_Testing_Pbj",
+  appId: "5dceaa7b-a230-4450-9bcd-807bcbc8d646",
+  renderNotifications: true,
+  network: 'mainnet'
+});
+
 const StyledLedgerLogo = styled(LedgerLogo)`
   margin-top: -5px;
   margin-bottom: -5px;
@@ -64,6 +74,12 @@ function AccountSelection() {
   async function connectBrowserWallet() {
     try {
       const connectedAddress = await connectBrowserProvider();
+      const userInfo = {
+        // email, //optional
+        address: connectedAddress,
+        // provider: 'metamask'
+      }
+      simple.passUserInfo(userInfo);
       onAccountChosen({ address: connectedAddress }, providerName);
     } catch (err) {
       window.alert(err);
